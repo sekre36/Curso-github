@@ -31,7 +31,7 @@ pipeline {
                       usuario = env.USERNAME
 
                     // Mostrar el usuario
-                    println "El usuario que está ejecutando la tarea es: ${usuario}"
+                    println "El usuario que está ejecutando la tarea es: ${env.BUILD_USER}"
                 }
             }
         }
