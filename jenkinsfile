@@ -1,1 +1,39 @@
+ipeline {
+    agent any
 
+    stages {
+        stage('Información de la ciudad') {
+            steps {
+                script {
+                    // Información de la ciudad
+                      ciudad = 'Carrizosa'
+                      habitantes = 1.225
+                      climaActual = 'Soleado'
+
+                    // Mostrar la información
+                    println "Ciudad actual: ${ciudad}"
+                    println "Habitantes: ${habitantes}"
+                    println "Clima actual: ${climaActual}"
+                }
+            }
+        }
+
+        stage('Ejecutar comando BAT') {
+            steps {
+                bat 'ipconfig /flushdns'
+            }
+        }
+
+        stage('Informar usuario') {
+            steps {
+                script {
+                    // Obtener el usuario que ejecuta la tarea
+                      usuario = env.USERNAME
+
+                    // Mostrar el usuario
+                    println "El usuario que está ejecutando la tarea es: ${usuario}"
+                }
+            }
+        }
+    }
+}
