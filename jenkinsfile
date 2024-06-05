@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     // Obtener el usuario que ejecuta la tarea
-                      usuario = env.USER_NAME
+                      usuario = env.BUILD_USER
 
                     // Mostrar el usuario
                     println "El usuario que está ejecutando la tarea es: ${usuario}"
